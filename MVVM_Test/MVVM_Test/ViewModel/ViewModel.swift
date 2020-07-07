@@ -15,11 +15,13 @@ let model = IO()
 
 let disposeBag = DisposeBag()
 
-public func bind() {
+public func inputFunc() {
     view.txtInput.rx.text
         .filter { $0 != nil }
         .map { $0! }
         .subscribe(onNext: { str in model.input },
                    onError: { err in print(err.localizedDescription) })
     .disposed(by: disposeBag)
+    
+
 }
