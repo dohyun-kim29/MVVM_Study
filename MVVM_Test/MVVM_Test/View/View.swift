@@ -11,6 +11,8 @@ import RxCocoa
 import RxSwift
 
 class View: UIViewController {
+    
+    let viewmodel = ViewModel()
 
     @IBOutlet weak var txtInput: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
@@ -18,6 +20,9 @@ class View: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewmodel.inputFunc()
+        viewmodel.outputFunc()
+        viewmodel.bind()
     }
 
 
