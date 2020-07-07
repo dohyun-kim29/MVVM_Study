@@ -22,6 +22,6 @@ public func inputFunc() {
         .subscribe(onNext: { str in model.input },
                    onError: { err in print(err.localizedDescription) })
     .disposed(by: disposeBag)
-    
 
 }
+
