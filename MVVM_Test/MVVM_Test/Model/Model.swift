@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+var view = View()
+
+let input : Observable<String> = view.txtInput.rx.text.orEmpty.asObservable()

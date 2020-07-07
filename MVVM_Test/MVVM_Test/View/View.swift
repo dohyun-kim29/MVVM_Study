@@ -10,6 +10,9 @@ import UIKit
 
 class View: UIViewController {
 
+    @IBOutlet weak var txtInput: UITextField!
+    @IBOutlet weak var lblOutput: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
