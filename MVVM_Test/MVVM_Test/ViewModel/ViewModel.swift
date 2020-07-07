@@ -25,3 +25,11 @@ public func inputFunc() {
 
 }
 
+public func outputFunc() {
+    model.input
+        .subscribe(onNext: { str in model.output },
+                          onError: { err in print(err.localizedDescription) })
+    .disposed(by: disposeBag)
+}
+
+
