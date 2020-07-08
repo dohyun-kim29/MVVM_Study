@@ -26,14 +26,11 @@ class ViewModel {
         .disposed(by: disposeBag)
 
     }
-
-    func outputFunc() {
-        model.input
-            .subscribe(onNext: { str in model.output },
-                              onError: { err in print(err.localizedDescription) })
-        .disposed(by: disposeBag)
+    
+    func transform() {
+        model.output = model.input
     }
-
+    
     func bind() {
         view.lblOutput.text! = model.output
     }

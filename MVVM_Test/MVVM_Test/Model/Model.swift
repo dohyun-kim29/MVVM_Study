@@ -11,6 +11,6 @@ import RxSwift
 import RxCocoa
 
 class IO {
-    let input : BehaviorSubject<String> = BehaviorSubject(value: "")
-    let output : String = ""
+    var input : String = ""
+    var output : String = ""
 }
