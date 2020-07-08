@@ -18,7 +18,7 @@ let disposeBag = DisposeBag()
 class ViewModel {
     
     func inputFunc() {
-        view.txtInput.rx.text
+        view.txtInput.rx.text //an Error Ocurred in rx method
             .filter { $0 != nil }
             .map { $0! }
             .subscribe(onNext: { str in model.input },
@@ -27,8 +27,11 @@ class ViewModel {
 
     }
     
-    func transform() {
-        model.output = model.input
+    func outputFunc() {
+        model.input
+            .subscribe(onNext: { str in model.output },
+                              onError: { err in print(err.localizedDescription) })
+        .disposed(by: disposeBag)
     }
     
     func bind() {
